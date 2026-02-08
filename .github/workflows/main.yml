@@ -17,12 +17,24 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      
+      - name: Start services with Docker
+        run: |
+          cd example-4
+          docker compose up -d
+          sleep 15
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd example-4
+          npm install
 
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps
+        run: |
+          cd example-4
+          npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test
+        run: |
+          cd example-4
+          npm test
