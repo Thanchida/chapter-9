@@ -32,7 +32,7 @@ jobs:
       - name: Install Playwright browsers
         run: |
           cd example-4
-          npx playwright install --with-deps
+          npx playwright install
 
       - name: Run Playwright tests
         run: |
