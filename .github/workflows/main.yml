@@ -34,6 +34,11 @@ jobs:
           cd example-4
           npx playwright install
 
+      - name: Install Playwright system dependencies
+        run: |
+          cd example-4
+          npx playwright install-deps
+
       - name: Run Playwright tests
         run: |
           cd example-4
